@@ -15,8 +15,14 @@
 }
 
 .btn {
-    background-color: blue;
-    color: white;
+    font-weight: bold;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+    background: -webkit-linear-gradient(top, rgba(228,245,252,1) 0%,rgba(191,232,249,1) 50%,rgba(159,216,239,1) 51%,rgba(42,176,237,1) 100%);
+    color: black;
+    text-align: center;
 }
 
 #time-rem {

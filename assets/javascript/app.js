@@ -91,7 +91,7 @@ function resetTimer() {
 };
 
 function displayTimer() {
-    $("#time-rem").html("Review"+"</h3><br><h3>");
+    $("#time-rem").html("Review Results"+"</h3><br><h3>");
 };
     
 function stopTimer() {
