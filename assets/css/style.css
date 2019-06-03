@@ -1,0 +1,10 @@
+#cs-heading {
+    background: url("../images/headingImage.jpg") ;
+}
+
+#heading {
+    font-weight: bold;
+    text-align: left;
+    color: white;
+    margin-left: 5%;
+}
