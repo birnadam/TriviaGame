@@ -16,13 +16,13 @@ const questions = [
 
     {
         question: "Which of the following is not a de_dust_2 callout?",
-        choices: ["cat", "lower tunnels", "long a", "upper a"],
+        choices: ["Cat", "Lower Tunnels", "Long A", "Upper A"],
         correctChoice: 3
     },
 
     {
         question: "What is the room next to the lower bombsite on de_nuke called?",
-        choices: ["office", "inferno", "toxic", "lobby"],
+        choices: ["Office", "Inferno", "Toxic", "Lobby"],
         correctChoice: 2
     },
 
@@ -34,7 +34,7 @@ const questions = [
 
     {
         question: "Which of the following bomb defuse maps has sewers?",
-        choices: ["office", "dust", "contra", "inferno"],
+        choices: ["Office", "Dust", "Contra", "Assault"],
         correctChoice: 2
     },
 

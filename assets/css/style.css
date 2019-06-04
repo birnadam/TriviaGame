@@ -11,7 +11,8 @@
 
 .cs-opt {
     font-size: 20px;
-	margin-right: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .btn {
@@ -32,4 +33,12 @@
     width: 50%;
     background: -webkit-linear-gradient(top, rgba(228,245,252,1) 0%,rgba(191,232,249,1) 50%,rgba(159,216,239,1) 51%,rgba(42,176,237,1) 100%);
     text-align: center;
+}
+
+body{
+    text-align: center;
+}
+
+form {
+    background: -webkit-linear-gradient(top, rgba(228,245,252,1) 0%,rgba(191,232,249,1) 50%,rgba(159,216,239,1) 51%,rgba(42,176,237,1) 100%);
 }
