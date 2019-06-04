@@ -191,16 +191,19 @@ function checkQ() {
     let correctAnswer = questions[questionCounter].correctChoice;
     if (userChoice[0] == questions[questionCounter].correctChoice) {
         $("#content").append('<h3>'+"Good Job! You're 1337 AF" + '</h3>');
+        $('audio#correctSound')[0].play()
         correct++;
         displayTimer();
     }
     else if (userChoice[0] === undefined) {
         $("#content").append('<h3>'+"Time's up!" + '</h3><br><h3>' + "The correct answer was: " + questions[questionCounter].choices[correctAnswer] + '</h3>');
+        $('audio#timeSound')[0].play()
         missed++;
         displayTimer();
     }
     else {
         $("#content").append('<h3>'+"You noob, you chose wrong" + '</h3><br><h3>' + "The correct answer was: " + questions[questionCounter].choices[correctAnswer] + '</h3>');
+        $('audio#incorrectSound')[0].play()
         incorrect++;
         displayTimer();
     };
@@ -210,6 +213,13 @@ function checkQ() {
 function showResults() {
     clearQ();
     $("#content").append('<h3>' + "Correct answers: " + correct + '</h3><br><h3>' + "Incorrect answers: " + incorrect + '</h3><br><h3>' + "Skipped questions: " + missed + '</h3><br><br><a href="#" class="btn btn-primary btn-lg" id="restart-button">' + "Restart" + '</a>');
+    //show an extra mesage above the results 
+    if (correct>6) {
+        $("#content2").append('<h3>'+"You're top tier, add me on steam!<br>" + '</h3>');
+    }
+    else{
+        $("#content2").append('<h3>'+"Get better scrub!" + '</h3><br><h3></h3>');
+    };
     //restart game
     $("#restart-button").on("click", function(event) {
         event.preventDefault();
