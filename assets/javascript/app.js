@@ -52,7 +52,7 @@ const questions = [
 ];
 
 //timeout so there is time before something is displayed
-let ansTimeout = 2400;
+let ansTimeout = 5000;
 
 //score variables to keep track
 let questionCounter = 0;
@@ -185,24 +185,43 @@ function nextQ() {
     };
 };
 
+//gifs for transitions
+const correctGif = '<img src="assets/images/correct.gif" alt="Loading" />';
+const timesupGif = '<img src="assets/images/timesup.gif" alt="Loading" />';
+const incorrectGif = '<img src="assets/images/incorrect.gif" alt="Loading" />';
+const winGif = '<img src="assets/images/win.gif" alt="Loading" />';
+const loseGif = '<img src="assets/images/lose.gif" alt="Loading" />';
+
 //showing answer was correct or not
 function checkQ() {
     clearQ();
     let correctAnswer = questions[questionCounter].correctChoice;
     if (userChoice[0] == questions[questionCounter].correctChoice) {
         $("#content").append('<h3>'+"Good Job! You're 1337 AF" + '</h3>');
+        $("#imageTransition").append(correctGif);
+        setTimeout(function(){
+            $("#imageTransition").empty();
+          }, 5000);
         $('audio#correctSound')[0].play()
         correct++;
         displayTimer();
     }
     else if (userChoice[0] === undefined) {
         $("#content").append('<h3>'+"Time's up!" + '</h3><br><h3>' + "The correct answer was: " + questions[questionCounter].choices[correctAnswer] + '</h3>');
+        $("#imageTransition").append(timesupGif);
+        setTimeout(function(){
+            $("#imageTransition").empty();
+          }, 5000);
         $('audio#timeSound')[0].play()
         missed++;
         displayTimer();
     }
     else {
         $("#content").append('<h3>'+"You noob, you chose wrong" + '</h3><br><h3>' + "The correct answer was: " + questions[questionCounter].choices[correctAnswer] + '</h3>');
+        $("#imageTransition").append(incorrectGif);
+        setTimeout(function(){
+            $("#imageTransition").empty();
+          }, 5000);
         $('audio#incorrectSound')[0].play()
         incorrect++;
         displayTimer();
@@ -216,9 +235,11 @@ function showResults() {
     //show an extra mesage above the results 
     if (correct>6) {
         $("#content2").append('<h3>'+"You're top tier, add me on steam!<br>" + '</h3>');
+        $("#imageTransition").append(winGif);
     }
     else{
         $("#content2").append('<h3>'+"Get better scrub!" + '</h3><br><h3></h3>');
+        $("#imageTransition").append(loseGif);
     };
     //restart game
     $("#restart-button").on("click", function(event) {
@@ -237,6 +258,8 @@ function reset() {
     incorrect = 0;
     missed = 0;
     userChoice = [];
+    $("#content2").empty();
+    $("#imageTransition").empty();
     resetTimer();
 };
 
